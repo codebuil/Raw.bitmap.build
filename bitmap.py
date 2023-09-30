@@ -11,8 +11,8 @@ def abrir_imagem():
     if file_path:
         values = []
         imagem_original = Image.open(file_path)
-        imagem_convertida = converter_imagem(imagem_original)
-        imagem_original.show()
+        converter_imagem(imagem_original)
+        
 
 # Função para converter a imagem
 def converter_imagem(imagem):
@@ -35,7 +35,7 @@ def converter_imagem(imagem):
                 cor |= 8
 
             values.append(cor)
-
+    print ("open ok")
     
 
 # Função para salvar a imagem convertida como .raw
@@ -43,6 +43,7 @@ def salvar_imagem_raw():
    # Salve os valores em um arquivo RAW
    with open('output.raw', 'wb') as file:
        file.write(bytearray(values))
+       print ("save ok")
 
 # Criar a janela principal
 janela = tk.Tk()
