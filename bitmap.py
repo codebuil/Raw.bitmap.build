@@ -21,17 +21,17 @@ def converter_imagem(imagem):
 
     for y in range(altura):
         for x in range(largura):
-            r, g, b, _ = imagem.getpixel((x, y))
+            r, g, b = imagem.getpixel((x, y))
 
             # Calcular o valor da cor com base nas regras
             cor = 0
-            if b > 63:
+            if b > 96:
                 cor |= 1
-            if g > 63:
+            if g > 96:
                 cor |= 2
-            if r > 63:
+            if r > 96:
                 cor |= 4
-            if r > 128 or g > 128 or b > 128:
+            if r > 192 or g > 192 or b > 192:
                 cor |= 8
 
             values.append(cor)
